@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ title }}</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
-</head>
-<body>
-    <h1>{{ message }}</h1>
-    <p>AHAHAH.</p>
-    <p>Версия: 1.0</p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Привет, я [Ваше имя]</h1>
+        <p>Профессиональный [Ваша профессия]</p>
+        <a href="{{ url_for('projects') }}" class="btn">Мои работы</a>
+    </div>
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Мое фото">
+    </div>
+</section>
+
+<section class="about">
+    <h2>Обо мне</h2>
+    <p>Здесь вы можете написать краткую информацию о себе, своих навыках и опыте работы.</p>
+</section>
+{% endblock %}
